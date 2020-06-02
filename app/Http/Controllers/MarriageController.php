@@ -2,13 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\RegistrationInfo;
 use Illuminate\Http\Request;
 
 class MarriageController extends Controller {
     
     public function index() {
-        
-        return view('marriage.index');
+        $brides = \App\Bride::all();
+        $bridegrooms = \App\Bridegroom::all();
+        $couples = array();
+        foreach($bridegrooms as $bridegroom) {
+            foreach($brides as $bride) {
+                $couples[] = [
+                    'bridegroom' => $bridegroom->first_name . " " . $bridegroom->last_name,
+                    'bride' => $bride->first_name . " " . $bride->last_name,
+                ];
+            }
+        }
+        return view('marriage.index', compact('couples'));
     }
 
     public function create() {
@@ -19,8 +30,8 @@ class MarriageController extends Controller {
         //
     }
 
-    public function show($id) {
-        //
+    public function show(RegistrationInfo $registrationInfo) {
+        return view('marriage.show', compact('registrationInfo'));
     }
 
     public function edit($id) {

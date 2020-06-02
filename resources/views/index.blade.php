@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.indexMain')
 @section('title', 'SIMKAH - Sistem Informasi Manajemen Pernikahan')
 @section('content')
   <!--Carousel Wrapper-->

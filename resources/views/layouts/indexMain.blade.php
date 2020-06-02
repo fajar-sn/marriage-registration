@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,40 +18,18 @@
   
   <!-- Your custom styles (optional) -->
   <link href={{ asset('css/style.min.css') }} rel="stylesheet">
-  
-  <!-- Bootstrap datepicker CSS -->
-  {{-- <link href="plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet"> --}}
-  {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.1/css/tempusdominus-bootstrap-4.min.css" /> --}}
   <style type="text/css">
-
-    html, body, header, .view {
-      height: 100%;
-    }
-
-    @media (max-width: 740px) {
-      html, body, header, .view {
-        height: 1000px;
-      }
-    }
-
-    @media (min-width: 800px) and (max-width: 850px) {
-      html, body, header, .view {
-        height: 650px;
-      }
-    }
-
     @media (min-width: 800px) and (max-width: 850px) {
       .navbar:not(.top-nav-collapse) {
-        background: #1C2331!important;
+        background: #1C2331 !important;
       }
     }
-
   </style>
 </head>
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg fixed-top navbar-dark unique-color-dark">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar">
     <div class="container">
 
       <!-- Brand -->
@@ -61,18 +40,21 @@
       <!-- Collapse -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
-      </button>\
+      </button>
 
       <!-- Links -->
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        
+
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
+          <li class="nav-item active">
             <a class="nav-link" href="{{ url('/') }}">Beranda</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('/info-pendaftaran-nikah') }}">Info Pendaftaran Nikah</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('/pernikahan') }}">Pernikahan</a>
           </li>
         </ul>
 
@@ -90,7 +72,7 @@
   <!-- Navbar -->
 
   @yield('content')
-
+  
   <!--Footer-->
   <footer class="page-footer text-center font-small mt-4 wow fadeIn">
 
@@ -107,23 +89,19 @@
 
   <!-- JQuery -->
   <script type="text/javascript" src={{ asset('js/jquery-3.4.1.min.js') }}></script>
-
+  
   <!-- Bootstrap tooltips -->
   <script type="text/javascript" src={{ asset('js/popper.min.js') }}></script>
-
+  
   <!-- Bootstrap core JavaScript -->
   <script type="text/javascript" src={{ asset('js/bootstrap.min.js') }}></script>
-
+  
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src={{ asset('js/mdb.min.js') }}></script>
-
-  <!-- Bootstrap Datepicker JS -->
-  {{-- <script type="text/javascript" src="plugins/datepicker/js/bootstrap-datepicker.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/js/tempusdominus-bootstrap-4.min.js"></script> --}}
   
   <!-- Initializations -->
   <script type="text/javascript">
+    
     // Animations initialization
     new WOW().init();
   </script>
