@@ -16,7 +16,7 @@
   <link href={{ asset('css/mdb.min.css') }} rel="stylesheet">
   
   <!-- Your custom styles (optional) -->
-  <link href={{ asset('css/style.min.css') }} rel="stylesheet">
+  <link href={{ asset('css/style.css') }} rel="stylesheet">
   
   <!-- Bootstrap datepicker CSS -->
   {{-- <link href="plugins/datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet"> --}}
@@ -44,6 +44,29 @@
         background: #1C2331!important;
       }
     }
+
+    @-webkit-keyframes autofill {
+      to {
+        color: #666;
+        background: transparent;
+      }
+    }
+
+    @keyframes autofill {
+      to {
+        color: #666;
+        background: transparent;
+      }
+    }
+
+    input:-webkit-autofill {
+      -webkit-animation-name: autofill;
+      animation-name: autofill;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+
+
 
   </style>
 </head>
